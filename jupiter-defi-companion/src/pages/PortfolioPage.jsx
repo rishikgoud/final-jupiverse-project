@@ -119,15 +119,18 @@ function PortfolioPage() {
   }, [tokens, solBalance]);
 
   useEffect(() => {
-    if (!wallet.trim()) return;
-    loadTokens();
-    const tokenInterval = setInterval(loadTokens, 60000);
-    const priceInterval = setInterval(pollPrices, 5000);
-    return () => {
-      clearInterval(tokenInterval);
-      clearInterval(priceInterval);
-    };
-  }, [wallet, loadTokens, pollPrices]);
+  if (!wallet.trim()) return;
+
+  loadTokens();
+  const tokenInterval = setInterval(loadTokens, 60000);
+  const priceInterval = setInterval(pollPrices, 5000);
+
+  return () => {
+    clearInterval(tokenInterval);
+    clearInterval(priceInterval);
+  };
+}, [wallet]);  // only depend on wallet if your callbacks are clean
+
 
   const totalValue = (solBalance * solPrice) + tokens.reduce((sum, t) => sum + (t.value || 0), 0);
   const pieData = [
