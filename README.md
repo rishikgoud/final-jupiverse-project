@@ -2,11 +2,15 @@
 
 **Coinverse** is a Web3 portfolio tracker and swap route explorer built on the Solana blockchain using the Jupiter Exchange APIs. It helps users monitor their token holdings, view live token prices, explore swap routes, and visualize their portfolio health — all through a clean, responsive, and beginner-friendly interface.
 
-##🚀 Live Demo
+---
+
+## 🚀 Live Demo
 
 👉 [Visit Coinverse](https://coinverse-fwor.onrender.com/)
 
-🏆 Built for
+---
+
+## 🏆 Built for
 
 Coinverse was built as part of a Web3 Hackathon to explore Solana blockchain capabilities and improve crypto portfolio experiences.  
 
