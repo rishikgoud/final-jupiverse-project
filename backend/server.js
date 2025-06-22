@@ -10,7 +10,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000'
+  origin: function(origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:3000', 
+      'https://coinverse-fwor.onrender.com'
+    ];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
 }));
 
 
