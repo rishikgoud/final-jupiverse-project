@@ -22,9 +22,9 @@ app.options('*', cors(corsOptions));
 
 // ✅ Correct route prefix
 const apiRoutes = require('./routes/api');
-app.use('/api', apiRoutes);
+app.use('/', apiRoutes);
 
-app.get('/api/health', (req, res) => {
+app.get('/health', (req, res) => {
   res.status(200).json({ status: 'healthy' });
 });
 
