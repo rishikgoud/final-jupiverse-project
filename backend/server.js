@@ -24,9 +24,6 @@ app.options('*', cors(corsOptions));
 
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ status: 'healthy' });
-});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
