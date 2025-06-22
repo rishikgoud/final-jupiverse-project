@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE = 'http://localhost:5000/api';  // Use your backend URL
+const API_BASE = 'https://coinverse-backend.onrender.com';  
 
 export async function fetchWalletTokens(wallet) {
   const { data } = await axios.get(`${API_BASE}/wallet-tokens`, {
