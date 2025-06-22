@@ -24,7 +24,7 @@ app.options('*', cors(corsOptions));
 
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);
-app.get('/health', (req, res) => {
+app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'healthy' });
 });
 
