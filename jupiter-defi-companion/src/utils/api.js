@@ -1,0 +1,22 @@
+import axios from 'axios';
+
+const API_BASE = 'http://localhost:5000/api';  // Use your backend URL
+
+export async function fetchWalletTokens(wallet) {
+  const { data } = await axios.get(`${API_BASE}/wallet-tokens`, {
+    params: { wallet }
+  });
+  return data;
+}
+
+export async function fetchTokenInfo(mint) {
+  const { data } = await axios.get(`${API_BASE}/token-info/${mint}`);
+  return data;
+}
+
+export async function fetchTokenPrices(mints) {
+  const { data } = await axios.get(`${API_BASE}/token-prices`, {
+    params: { mints: mints.join(',') }
+  });
+  return data;
+}
