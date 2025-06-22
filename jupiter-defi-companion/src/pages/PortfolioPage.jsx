@@ -126,7 +126,7 @@ function PortfolioPage() {
       clearInterval(tokenInterval);
       clearInterval(priceInterval);
     };
-  }, [wallet]);
+  }, [wallet,loadTokens, pollPrices]);
 
   const totalValue = (solBalance * solPrice) + tokens.reduce((sum, t) => sum + (t.value || 0), 0);
   const pieData = [

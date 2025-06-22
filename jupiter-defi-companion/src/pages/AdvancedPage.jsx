@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import  { useState } from 'react';
+import { motion,  } from 'framer-motion';
 import { 
-  Zap, Clock, ArrowUpDown, Shield, Trophy, BarChart2, 
-  DollarSign, Calendar, TrendingUp, Sparkles, BadgeCheck 
+   Clock, ArrowUpDown, Shield, Trophy, BarChart2, 
+   Calendar, TrendingUp, Sparkles, BadgeCheck 
 } from 'lucide-react';
 
 const AdvancedPage = () => {
