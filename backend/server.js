@@ -2,12 +2,12 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
-
 dotenv.config();
 
-
 const app = express();
+
 app.use(express.json());
+
 const corsOptions = {
   origin: process.env.CORS_ORIGIN
     ? process.env.CORS_ORIGIN.split(',')
@@ -18,12 +18,15 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
-// Allow preflight requests
 app.options('*', cors(corsOptions));
 
-
+// ✅ Correct route prefix
 const apiRoutes = require('./routes/api');
 app.use('/api', apiRoutes);
+
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'healthy' });
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
