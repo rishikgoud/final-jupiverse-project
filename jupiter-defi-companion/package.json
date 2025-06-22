@@ -2,7 +2,7 @@
   "name": "jupiter-defi-companion",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "./",
    "build": "react-scripts build && mv build dist",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
